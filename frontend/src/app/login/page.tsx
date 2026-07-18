@@ -1,100 +1,37 @@
 "use client";
 
-import { useState } from "react";
-import { useRouter } from "next/navigation";
-import { login, register } from "@/lib/firebase/auth";
-import { Button } from "@/components/ui/Button";
-import { Card } from "@/components/ui/Card";
-import styles from "./page.module.css";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
-export default function LoginPage() {
-  const [isLogin, setIsLogin] = useState(true);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-  
-  const router = useRouter();
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-    setError(null);
-    
-    try {
-      if (isLogin) {
-        await login(email, password);
-      } else {
-        await register(email, password);
-      }
-      router.push("/dashboard");
-    } catch (err: any) {
-      setError(err.message || "An error occurred");
-    } finally {
-      setLoading(false);
-    }
-  };
-
+export default function Login() {
   return (
-    <div className={styles.container}>
+    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: 'calc(100vh - 72px)' }}>
       <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className={styles.formWrapper}
+        className="glass-panel"
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        style={{ width: '100%', maxWidth: '400px', padding: '2.5rem' }}
       >
-        <Card className={styles.authCard}>
-          <div className={styles.header}>
-            <h1 className="gradient-text">{isLogin ? "Admin Sign In" : "Create Admin Account"}</h1>
-            <p>Access the Education Migration Intelligence Platform</p>
+        <h1 className="title-medium" style={{ textAlign: 'center', marginBottom: '0.5rem' }}>Welcome Back</h1>
+        <p style={{ textAlign: 'center', color: 'rgba(255,255,255,0.6)', marginBottom: '2rem' }}>Sign in to access your dashboard</p>
+        
+        <form style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }} onSubmit={(e) => e.preventDefault()}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+            <label style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.8)' }}>Email</label>
+            <input type="email" placeholder="admin@gov.in" style={{ padding: '12px', borderRadius: '8px', background: 'rgba(0,0,0,0.2)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', outline: 'none' }} />
           </div>
-          
-          <form onSubmit={handleSubmit} className={styles.form}>
-            {error && <div className={styles.error}>{error}</div>}
-            
-            <div className={styles.inputGroup}>
-              <label htmlFor="email">Email Address</label>
-              <input
-                id="email"
-                type="email"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="admin@gov.in"
-                className={styles.input}
-              />
-            </div>
-            
-            <div className={styles.inputGroup}>
-              <label htmlFor="password">Password</label>
-              <input
-                id="password"
-                type="password"
-                required
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="••••••••"
-                className={styles.input}
-              />
-            </div>
-            
-            <Button type="submit" isLoading={loading} className={styles.submitButton}>
-              {isLogin ? "Sign In" : "Register"}
-            </Button>
-          </form>
-          
-          <div className={styles.toggleText}>
-            {isLogin ? "Need access? " : "Already have an account? "}
-            <button 
-              type="button" 
-              onClick={() => setIsLogin(!isLogin)}
-              className={styles.toggleButton}
-            >
-              {isLogin ? "Register here" : "Sign in here"}
-            </button>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+            <label style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.8)' }}>Password</label>
+            <input type="password" placeholder="••••••••" style={{ padding: '12px', borderRadius: '8px', background: 'rgba(0,0,0,0.2)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', outline: 'none' }} />
           </div>
-        </Card>
+          <button style={{ padding: '14px', borderRadius: '8px', background: 'var(--primary)', color: '#fff', border: 'none', fontWeight: 'bold', cursor: 'pointer', marginTop: '1rem' }}>
+            Sign In
+          </button>
+        </form>
+        
+        <div style={{ textAlign: 'center', marginTop: '1.5rem', fontSize: '0.9rem', color: 'rgba(255,255,255,0.5)' }}>
+          Don't have an account? <Link href="#" style={{ color: 'var(--primary-light)' }}>Contact Admin</Link>
+        </div>
       </motion.div>
     </div>
   );

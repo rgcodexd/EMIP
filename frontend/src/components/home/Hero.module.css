@@ -1,0 +1,92 @@
+.hero {
+  position: relative;
+  min-height: calc(100vh - 72px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 4rem 5%;
+  text-align: center;
+  overflow: hidden;
+}
+
+.content {
+  z-index: 10;
+  max-width: 800px;
+  margin-bottom: 3rem;
+}
+
+.subtitle {
+  color: var(--primary-light);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.title {
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+.description {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+
+.actions {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.primaryBtn, .secondaryBtn {
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.primaryBtn {
+  background: var(--primary);
+  color: #fff;
+  box-shadow: 0 4px 14px var(--glow-primary);
+}
+
+.primaryBtn:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--glow-primary);
+}
+
+.secondaryBtn {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  backdrop-filter: blur(8px);
+}
+
+.secondaryBtn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.mapSection {
+  width: 100%;
+  max-width: 1000px;
+  z-index: 5;
+  margin-bottom: 4rem;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+  z-index: 10;
+}

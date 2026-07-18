@@ -1,0 +1,28 @@
+"use client";
+
+import styles from "./FeatureCard.module.css";
+import { motion } from "framer-motion";
+
+interface FeatureCardProps {
+  title: string;
+  description: string;
+  icon: string;
+  delay?: number;
+}
+
+export default function FeatureCard({ title, description, icon, delay = 0 }: FeatureCardProps) {
+  return (
+    <motion.div 
+      className={`${styles.card} glass-panel`}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay }}
+      whileHover={{ y: -5 }}
+    >
+      <div className={styles.icon}>{icon}</div>
+      <h3 className={styles.title}>{title}</h3>
+      <p className={styles.description}>{description}</p>
+    </motion.div>
+  );
+}
