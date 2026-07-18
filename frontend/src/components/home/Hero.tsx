@@ -18,11 +18,11 @@ export default function Hero() {
       >
         <div className={styles.subtitle}>Intelligence for Education Migration</div>
         <h1 className={`${styles.title} title-large`}>
-          Predict • Analyze • Optimize <br/>
-          <span className="gradient-text">Student Mobility Across India</span>
+          Track Student Migration Across India<br/>
+          <span className="gradient-text">Predict Future Trends</span>
         </h1>
         <p className={styles.description}>
-          The government-level platform designed to track student migration patterns, calculate financial drains, and optimize infrastructure.
+          Optimize National Education Resources with AI-powered analytics and demographic modeling.
         </p>
         
         <div className={styles.actions}>
@@ -45,10 +45,10 @@ export default function Hero() {
       </motion.div>
 
       <div className={styles.statsGrid}>
-        <StatCard value="2.3M" label="Students Tracked" delay={0.6} />
+        <StatCard value={stats.students} label="Students" delay={0.6} />
         <StatCard value={stats.districts} label="Districts" delay={0.7} />
-        <StatCard value={`${stats.migrationRate}%`} label="Migration Growth" delay={0.8} />
-        <StatCard value={stats.resourceLoss} label="Estimated Resource Shift" delay={0.9} />
+        <StatCard value={stats.universities} label="Universities" delay={0.8} />
+        <StatCard value={stats.predictions} label="Predictions" delay={0.9} />
       </div>
     </section>
   );

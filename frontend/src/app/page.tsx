@@ -1,6 +1,7 @@
 "use client";
 
 import Hero from "@/components/home/Hero";
+import ProblemStatement from "@/components/home/ProblemStatement";
 import FeatureCard from "@/components/ui/FeatureCard";
 import { features } from "@/lib/dummyData";
 
@@ -8,6 +9,7 @@ export default function Home() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem', paddingBottom: '4rem' }}>
       <Hero />
+      <ProblemStatement />
       
       <section style={{ padding: '0 5%', maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
         <h2 className="title-medium" style={{ textAlign: 'center', marginBottom: '3rem' }}>

@@ -18,7 +18,8 @@ export default function FeatureCard({ title, description, icon, delay = 0 }: Fea
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay }}
-      whileHover={{ y: -5 }}
+      whileHover={{ y: -8, scale: 1.02, boxShadow: "0 10px 40px rgba(59, 130, 246, 0.2)" }}
+      whileTap={{ scale: 0.98 }}
     >
       <div className={styles.icon}>{icon}</div>
       <h3 className={styles.title}>{title}</h3>
