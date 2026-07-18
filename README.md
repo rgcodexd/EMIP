@@ -19,19 +19,20 @@ This project is built using a dual-stack architecture to separate fast UI delive
 
 ## Project Structure
 
-- `/src/app/portal` - Public Student Portal (ROI Calculator)
-- `/src/app/dashboard` - Secure Government Admin Dashboard
-- `/src/components/charts` - Reusable ECharts components (Heatmaps, Resource graphs)
+- `/frontend/src/app/portal` - Public Student Portal (ROI Calculator)
+- `/frontend/src/app/dashboard` - Secure Government Admin Dashboard
+- `/frontend/src/components/charts` - Reusable ECharts components (Heatmaps, Resource graphs)
 - `/backend` - Python FastAPI microservice for AI/ML tasks
-- `/scripts/seed.mjs` - Firestore database population script
+- `/frontend/scripts/seed.mjs` - Firestore database population script
 
 ## Getting Started
 
 ### 1. Frontend Setup (Next.js)
 
-Ensure you have Node.js installed, then install the dependencies:
+Ensure you have Node.js installed, then navigate to the frontend directory and install the dependencies:
 
 ```bash
+cd frontend
 npm install
 ```
 
