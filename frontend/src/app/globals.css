@@ -1,17 +1,26 @@
 :root {
-  --background: #0f172a;
+  --background: #0B1121;
   --foreground: #f8fafc;
+  
   --primary: #3b82f6;
   --primary-hover: #2563eb;
+  --primary-light: #60a5fa;
+  
   --secondary: #1e293b;
+  --secondary-hover: #334155;
+  
   --accent: #8b5cf6;
+  --accent-light: #a78bfa;
+  
   --success: #10b981;
   --warning: #f59e0b;
   --danger: #ef4444;
-  --card-bg: rgba(30, 41, 59, 0.7);
-  --card-border: rgba(255, 255, 255, 0.1);
-  --glass-bg: rgba(15, 23, 42, 0.8);
-  --glass-border: rgba(255, 255, 255, 0.05);
+  
+  --card-bg: rgba(15, 23, 42, 0.4);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --glass-bg: rgba(11, 17, 33, 0.75);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glow-primary: rgba(59, 130, 246, 0.3);
 }
 
 * {
@@ -23,29 +32,74 @@
 body {
   background-color: var(--background);
   color: var(--foreground);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  line-height: 1.5;
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: 
+    radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.15) 0%, transparent 50%);
+  background-attachment: fixed;
+  min-height: 100vh;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* Glassmorphism Utilities */
 .glass-panel {
   background: var(--card-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--card-border);
   border-radius: 16px;
   padding: 24px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
+.glass-panel:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Typography Utilities */
 .gradient-text {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  background: linear-gradient(135deg, var(--primary-light) 0%, var(--accent-light) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  display: inline-block;
+}
+
+.title-large {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.title-medium {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* Base Animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
 }
