@@ -7,10 +7,11 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.links}>
-        <Link href="/">Home</Link>
         <Link href="/about">About</Link>
-        <Link href="/student">Student Portal</Link>
-        <Link href="/dashboard">Dashboard</Link>
+        <Link href="#">Documentation</Link>
+        <Link href="#">Github</Link>
+        <Link href="#">Privacy</Link>
+        <Link href="#">Contact</Link>
       </div>
       <p>© {new Date().getFullYear()} EMIP. All rights reserved.</p>
     </footer>

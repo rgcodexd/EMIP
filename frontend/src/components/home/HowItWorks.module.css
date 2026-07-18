@@ -1,0 +1,68 @@
+.section {
+  padding: 6rem 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  margin-bottom: 4rem;
+}
+
+.steps {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  position: relative;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+  min-width: 200px;
+  padding: 2rem;
+  border-radius: 16px;
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--card-border);
+  position: relative;
+  z-index: 2;
+}
+
+.icon {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.stepTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* Arrow between steps */
+.arrow {
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 1rem);
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  color: var(--primary);
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .steps {
+    flex-direction: column;
+  }
+  .arrow {
+    position: static;
+    transform: rotate(90deg);
+    margin: 1rem 0;
+  }
+}
