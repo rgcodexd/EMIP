@@ -12,8 +12,8 @@ export default function Dashboard() {
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1.5rem' }}>
         <StatCard value="2.3M" label="Students Tracked" />
         <StatCard value={stats.districts} label="Districts" />
-        <StatCard value={`${stats.migrationRate}%`} label="Migration Growth" />
-        <StatCard value={stats.resourceLoss} label="Estimated Resource Shift" />
+        <StatCard value={stats.universities} label="Universities" />
+        <StatCard value={stats.predictions} label="Predictions" />
       </div>
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '2rem' }}>
