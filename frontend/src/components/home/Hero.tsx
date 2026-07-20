@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "./Hero.module.css";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import Link from "next/link";
 import MigrationMap from "../charts/MigrationMap";
 import StatCard from "../ui/StatCard";
