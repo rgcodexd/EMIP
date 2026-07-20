@@ -2,7 +2,7 @@
 
 import CountUp from "react-countup";
 import styles from "./StatCard.module.css";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 interface StatCardProps {
   value: string | number;

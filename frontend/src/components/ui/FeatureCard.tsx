@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "./FeatureCard.module.css";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 interface FeatureCardProps {
   title: string;
