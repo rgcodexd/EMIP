@@ -1,4 +1,4 @@
-# EMIP (Education Migration Intelligence Platform)
+# EMIP (    )
 
 EMIP is a government-level intelligence platform designed to track student migration patterns across India. By analyzing spatial data and economic indicators, the platform calculates the financial drain on home districts and the infrastructure burden on Tier-1 cities, providing AI-driven policy insights.
 

@@ -9,10 +9,10 @@
   justify-content: space-between;
   padding: 0 5%;
   z-index: 1000;
-  background: rgba(11, 17, 33, 0.75);
+  background: var(--glass-bg);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid var(--glass-border);
 }
 
 .logo {
@@ -30,12 +30,13 @@
 .link {
   font-size: 0.95rem;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.7);
-  transition: color 0.2s ease;
+  color: var(--foreground);
+  opacity: 0.7;
+  transition: opacity 0.2s ease, color 0.2s ease;
 }
 
 .link:hover, .active {
-  color: #fff;
+  opacity: 1;
 }
 
 .loginBtn {

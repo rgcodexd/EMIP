@@ -42,7 +42,7 @@
 .stepTitle {
   font-size: 1.1rem;
   font-weight: 600;
-  color: #fff;
+  color: var(--foreground);
 }
 
 /* Arrow between steps */
