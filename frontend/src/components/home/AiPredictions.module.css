@@ -29,15 +29,15 @@
 
 .year {
   font-size: 0.9rem;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--foreground);
+  opacity: 0.5;
   letter-spacing: 0.1em;
 }
 
 .state {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--foreground);
 }
 
 .prediction {
@@ -46,9 +46,9 @@
 }
 
 .positive {
-  color: #10b981;
+  color: var(--success);
 }
 
 .negative {
-  color: #ef4444;
+  color: var(--danger);
 }

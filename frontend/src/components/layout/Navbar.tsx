@@ -1,10 +1,12 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
+import logoImg from "@/assets/logo-jukebox-bg-removed.png";
 import { usePathname } from "next/navigation";
 import styles from "./Navbar.module.css";
 import { motion } from "motion/react";
-import { useTheme } from "next-themes";
+import { useTheme } from "@/components/ThemeProvider";
 import { Sun, Moon } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -31,8 +33,9 @@ export default function Navbar() {
       animate={{ y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
-      <Link href="/" className={styles.logo}>
-        <span className="gradient-text">EMIP</span>
+      <Link href="/" className={styles.logo} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+        <Image src={logoImg} alt="EMIP Logo" width={32} height={32} style={{ objectFit: 'contain' }} />
+        <span className="gradient-text" style={{ fontSize: '1.75rem' }}>EMIP</span>
       </Link>
       
       <div className={styles.navLinks}>

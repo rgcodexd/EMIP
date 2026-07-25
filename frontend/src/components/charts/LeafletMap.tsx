@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { MapContainer, TileLayer, Polyline, CircleMarker, Popup, useMap } from 'react-leaflet';
-import { useTheme } from 'next-themes';
+import { useTheme } from '@/components/ThemeProvider';
 import L from 'leaflet';
 import styles from './MigrationMap.module.css';
 
