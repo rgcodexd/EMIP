@@ -21,9 +21,9 @@ const migrationFlows = [
 
 // Helper to update map theme tiles dynamically
 function ThemeTileLayer() {
-  const { resolvedTheme } = useTheme();
+  const { theme } = useTheme();
   
-  const tileUrl = resolvedTheme === 'dark'
+  const tileUrl = theme === 'dark'
     ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png' // CartoDB Dark Matter
     : 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png'; // CartoDB Positron
 
